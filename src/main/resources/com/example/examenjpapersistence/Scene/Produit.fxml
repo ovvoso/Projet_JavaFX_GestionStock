@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examenjpapersistence.Controller.ProduitController">
+    <children>
+        <Pane prefHeight="688.0" prefWidth="794.0">
+            <children>
+                <BorderPane prefHeight="688.0" prefWidth="794.0" style="-fx-background-color: #EDF6F5;" stylesheets="@../Assets/style.css">
+                    <top>
+                        <Pane prefHeight="69.0" prefWidth="794.0" stylesheets="@../Assets/style.css" BorderPane.alignment="CENTER">
+                            <children>
+
+                                
+                                <Line endX="7.5" endY="69.0" opacity="0.18" startX="785.0" startY="69.0" stroke="#838383" />
+                                <HBox prefHeight="60.0" prefWidth="794.0">
+                                    <children>
+                                        <ImageView fitHeight="70.0" fitWidth="141.0" pickOnBounds="true">
+                                            <HBox.margin>
+                                                <Insets top="8.0" />
+                                            </HBox.margin>
+                                            <image>
+                                                <Image url="@Assets/image/Logo.png" />
+                                            </image>
+                                        </ImageView>
+                              <Pane prefHeight="57.0" prefWidth="539.0" style="-fx-background-color: #33caff;">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="220.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUIT">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </Pane>
+                    </top>
+               <center>
+                  <Pane prefHeight="626.0" prefWidth="794.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutY="6.0" prefHeight="605.0" prefWidth="794.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="636.0" layoutY="373.0" prefHeight="200.0" prefWidth="100.0" spacing="24.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addProduit" prefHeight="25.0" prefWidth="74.0" stylesheets="@../Assets/style.css" text="Ajouter" textAlignment="CENTER" />
+                                    <Button mnemonicParsing="false" onAction="#updateProduit" prefHeight="25.0" prefWidth="76.0" text="Editer" />
+                                    <Button mnemonicParsing="false" onAction="#clearChamps" prefHeight="25.0" prefWidth="73.0" text="Efacer" />
+                                    <Button mnemonicParsing="false" onAction="#deleteProduit" prefHeight="25.0" prefWidth="72.0" text="Supprimer" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" layoutX="206.0" layoutY="372.0" prefHeight="202.0" prefWidth="82.0" spacing="30.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="id" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Libelle" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix Unitaire" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Catégorie" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                              <TableView fx:id="table_produit" layoutX="227.0" layoutY="42.0" onMouseClicked="#chargementChamps" prefHeight="312.0" prefWidth="554.0">
+                                <columns>
+                                  <TableColumn fx:id="t_id" prefWidth="52.0" text="ID" />
+                                  <TableColumn fx:id="t_libelle" prefWidth="115.0" text="Libelle" />
+                                    <TableColumn fx:id="t_quantite" prefWidth="128.0" text="Quantite" />
+                                    <TableColumn fx:id="t_prixUnitaire" prefWidth="154.0" text="Prix Unitaire" />
+                                    <TableColumn fx:id="t_categorie" prefWidth="124.0" text="Categorie" />
+                                </columns>
+                              </TableView>
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="242.0" prefWidth="193.0" styleClass="navBar" stylesheets="@../Assets/style.css">
+                                 <children>
+                                              <Pane layoutX="-7.0" layoutY="-5.0" prefHeight="249.0" prefWidth="205.0">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="225.0" prefWidth="183.0" spacing="15.0">
+                                             <children>
+                                                              <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#sceneProduit" prefHeight="33.0" prefWidth="110.0" styleClass="text-hover" stylesheets="@../Assets/style.css" text="PRODUIT" textAlignment="CENTER">
+                                                                  <font>
+                                                                      <Font name="System Bold" size="15.0" />
+                                                                  </font>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                              </Button>
+                                                              <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#sceneCategorie" prefHeight="33.0" prefWidth="119.0" styleClass="text-hover" stylesheets="@../Assets/style.css" text="CATEGORIE" textAlignment="CENTER">
+                                                                  <font>
+                                                                      <Font name="System Bold" size="15.0" />
+                                                                  </font>
+                                                              </Button>
+                                                              <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#sceneExtraireDocument" prefHeight="33.0" prefWidth="183.0" styleClass="text-hover" stylesheets="@../Assets/style.css" text="EXTRAIRE DOCUMENT" textAlignment="CENTER">
+                                                                  <font>
+                                                                      <Font name="System Bold" size="15.0" />
+                                                                  </font>
+                                                              </Button>
+                                                              <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#sceneStatistique" prefHeight="33.0" prefWidth="124.0" styleClass="text-hover" stylesheets="@../Assets/style.css" text="STATISTIQUES" textAlignment="CENTER">
+                                                                  <font>
+                                                                      <Font name="System Bold" size="15.0" />
+                                                                  </font>
+                                                              </Button>
+                                                              <Button contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#sceneDashboard" prefHeight="33.0" prefWidth="124.0" styleClass="text-hover" stylesheets="@../Assets/style.css" text="DASHBOARD" textAlignment="CENTER">
+                                                                  <font>
+                                                                      <Font name="System Bold" size="15.0" />
+                                                                  </font>
+                                                              </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                              </Pane>
+                                 </children>
+                              </Pane>
+                              <VBox layoutX="310.0" layoutY="371.0" prefHeight="205.0" prefWidth="282.0" spacing="20.0">
+                                 <children>
+                                    <TextField fx:id="c_id" />
+                                    <TextField fx:id="c_libelle" />
+                                    <TextField fx:id="c_quantite" />
+                                    <TextField fx:id="c_prixUnitaire" />
+                                    <ComboBox fx:id="c_categorie" prefHeight="25.0" prefWidth="423.0" promptText="-- choisissez une option --" />
+                                 </children>
+                              </VBox>
+                              <TextField fx:id="c_search" layoutX="573.0" layoutY="11.0" onKeyReleased="#search" prefHeight="25.0" prefWidth="206.0" promptText="Rechercher  . . . " />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </center>
+                </BorderPane>
+            </children>
+        </Pane>
+                <Pane layoutX="682.0" layoutY="-4.0" prefHeight="69.0" prefWidth="112.0">
+         <children>
+                        <Button mnemonicParsing="false" 
+                                onAction="#handleDeconnexion"
+                                prefHeight="35.0" 
+                                prefWidth="102.0" 
+                                styleClass="deconnexion-hover" 
+                                stylesheets="@../Assets/style.css" 
+                                text="DECONNEXION">
+                            <font>
+                                <Font name="System Bold" size="10.0" />
+                            </font>
+                        </Button>
+         </children>
+                </Pane>
+    </children>
+</AnchorPane>
